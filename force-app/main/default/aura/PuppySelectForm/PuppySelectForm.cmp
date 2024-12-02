@@ -1,0 +1,32 @@
+<aura:component>
+    <div class="dog-select-form">
+        <div class="slds-form-element">
+            <label for="select-breed" class="slds-form-element__label slds-assistive-text">Select a Breed</label>
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                    <select class="slds-select" name="selectBreed" id="select-breed">
+                        <option value="">Select a Breed</option>
+                        <!-- these options should be breeds from a GET request found in https://dog.ceo/dog-api/documentation/ -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-form-element">
+            <label for="select-subbreed" class="slds-form-element__label slds-assistive-text">Select a Sub-breed</label>
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                    <select class="slds-select" name="selectSubBreed" id="select-subbreed">
+                        <option value="">Select a Sub-breed</option>
+                        <!-- if there are sub-breeds, these options should be populated accordingly -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- upon submission, your choices should be concatenated to form a GET request to pull images for the respective breed (or sub-breed if available) -->
+        <button class="slds-button slds-button_neutral get-dogs-btn">
+            Get Dogs!
+        </button>
+    </div>
+</aura:component>

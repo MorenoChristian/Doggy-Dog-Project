@@ -1,0 +1,19 @@
+<aura:component>
+    <aura:attribute name="imgPath" type="String" />
+    <aura:attribute name="breed" type="String" />
+
+    <!-- when this figure is clicked, it should save this image along with the breed and be displayed in the favorites tab of <c:PuppyViewer /> -->
+    <figure class="dog">
+        <div class="avatar">
+            <img src="{! v.imgPath }" alt="" />
+        </div>
+        <figcaption class="caption">
+            {! v.breed }
+        </figcaption>
+
+        <!-- this div should be rendered only if the entire figure has been clicked. -->
+        <div class="favorite-action">
+            <lightning:icon iconName="utility:favorite" alternativeText="Favorite" size="x-small" />
+        </div>
+    </figure>
+</aura:component>

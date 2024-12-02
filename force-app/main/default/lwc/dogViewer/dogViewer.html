@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-card slds-p-around_large">
+        <c-dog-select-form ondogimages={handleDogImages}></c-dog-select-form>
+        <lightning-tabset>
+            <lightning-tab label="Dogs!">
+                <div class="dogs">
+                    <!-- render these dynamically -->
+                    <template for:each={images} for:item="imgUrl">
+                        <c-dog-card 
+                            data-id={imgUrl} 
+                            key={imgUrl} 
+                            img-path={imgUrl} 
+                            breed={breed} 
+                            subbreed={subBreed} 
+                            favorite={favorite} 
+                            ondogimage={handleDogImage} 
+                            onclick={createRecordHandler}>
+                        </c-dog-card>
+                    </template>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Favorites">
+                <div class="dogs">
+                    <!-- render these dynamically -->
+                     <template for:each={favorites.data} for:item="dog">
+                        <c-dog-card
+                            key={dog} 
+                            img-path={dog.imageUrl__c} 
+                            breed={dog.Breed__c} 
+                            subbreed={dog.Sub_Breed__c} 
+                            favorite="true"
+                            starflag="true" 
+                            ondogimage={handleDogImage} 
+                            onclick={handleDeleteRecord}>
+                        </c-dog-card>
+                     </template>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
+</template>

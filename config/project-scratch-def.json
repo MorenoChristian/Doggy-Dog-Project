@@ -1,0 +1,28 @@
+{
+  "orgName": "Demo Company",
+  "edition": "Developer",
+  "features": ["DebugApex", "EnableSetPasswordInApi"],
+  "settings": {
+      "lightningExperienceSettings": {
+          "enableS1DesktopEnabled": true
+      },
+      "mobileSettings": {
+          "enableS1EncryptedStoragePref2": false
+      },
+      "chatterSettings": {
+          "enableChatter": true
+      },
+      "userManagementSettings": {
+          "enableNewProfileUI": true
+      },
+      "securitySettings": {
+          "enableAdminLoginAsAnyUser": true,
+          "sessionSettings": {
+              "forceRelogin": false
+          }
+      },
+      "languageSettings": {
+          "enableTranslationWorkbench": true
+      }
+  }
+}

@@ -1,0 +1,38 @@
+<template>
+    <div class="dog-select-form">
+        <div class="slds-form-element">
+            <label for="select-breed" class="slds-form-element__label slds-assistive-text">Select a Breed</label>
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                    <select class="slds-select" name="selectBreed" id="select-breed" onchange={handleBreedSelection}>
+                        <option value="">Select a Breed</option>
+                        <template for:each={breedNames} for:item="breed">
+                            <option key={breed} value={breed}>{breed}</option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <template if:true={hasSubBreeds}>
+            <div class="slds-form-element">
+                <label for="select-subbreed" class="slds-form-element__label slds-assistive-text">Select a Sub-breed</label>
+                <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                            <select class="slds-select" name="selectSubBreed" id="select-subbreed" onchange={handleSubBreedSelection}>
+                                <option value="">Select a Sub-breed</option>
+                                <template for:each={subBreedNames} for:item="subBreed">
+                                    <option key={subBreed} value={subBreed}>{subBreed}</option>
+                                </template>
+                            </select>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- upon submission, your choices should be concatenated to form a GET request to pull images for the respective breed (or sub-breed if available) -->
+        <button class="slds-button slds-button_neutral get-dogs-btn" onclick={getDogsHandler}>
+            Get Dogs!
+        </button>
+    </div>
+</template>

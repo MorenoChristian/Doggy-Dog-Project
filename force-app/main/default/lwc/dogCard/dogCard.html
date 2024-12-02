@@ -1,0 +1,19 @@
+<template>
+    <!-- when this figure is clicked, it should save this image along with the breed and be displayed in the favorites tab of <c-dog-viewer /> -->
+    <figure class="dog" onclick={imageHandler}>
+        <div class="avatar">
+            <img src={imgPath} alt=""/>
+        </div>
+        <figcaption class="caption">
+            {breed} {subbreed}
+        </figcaption>
+
+        <template if:true={starflag}>
+            <!-- this div should be rendered only if the entire figure has been clicked. -->
+            <div class="favorite-action">
+            <lightning-icon icon-name="utility:favorite" alternative-text="Favorite" size="x-small">
+            </lightning-icon>
+        </div>
+        </template>
+    </figure>
+</template>
